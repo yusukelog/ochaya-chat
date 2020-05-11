@@ -2,18 +2,17 @@ import firebase from 'firebase'
 
 // .env に設定した値を取得してる
 const firebaseConfig = {
-  apiKey: 'AIzaSyBlg_Xx_CRI62cCnhYnuSSbR2qDQ3UL1MU',
-  authDomain: 'chaya-chat.firebaseapp.com',
-  databaseURL: 'https://chaya-chat.firebaseio.com',
-  projectId: 'chaya-chat',
-  storageBucket: 'chaya-chat.appspot.com',
-  messagingSenderId: '752746984144',
-  appId: '1:752746984144:web:373b430e4e0f6a092224d5',
-  measurementId: 'G-YXC0MNCVT6'
+  apiKey: process.env.FB_API_KEY,
+  authDomain: process.env.FB_AUTH_DOMAIN,
+  databaseURL: process.env.FB_DATABASE_URL,
+  projectId: process.env.FB_PROJECTID,
+  storageBucket: process.env.FB_STORAGE_BUCKET,
+  messagingSenderId: process.env.FB_MESSAGING_SENDER_ID,
+  appId: process.env.FB_APP_ID,
+  measurementId: process.env.FB_MEASUREMENT_ID
 }
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
-firebase.analytics()
 
 export default firebase

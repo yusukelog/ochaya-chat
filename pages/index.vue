@@ -65,11 +65,22 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
+import firebase from '~/plugins/firebase'
 
 export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+  created() {
+    this.readData()
+  },
+  methods: {
+    async readData() {
+      const db = firebase.firestore()
+      const res = await db.doc('users/test').get()
+      console.log(res.data().name)
+    }
   }
 }
 </script>
