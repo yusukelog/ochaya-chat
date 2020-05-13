@@ -9,7 +9,7 @@
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
 
-    <v-app-bar app class="light-green darken-1 white--text">
+    <v-app-bar app class="light-green darken-1 white--text" flat>
       <h1 class="title font-weight-bold">
         <span class="m-plus">おちゃ屋チャット</span>
       </h1>

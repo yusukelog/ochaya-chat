@@ -10,7 +10,7 @@
           <v-img
             :src="image_src"
             alt="おちゃ屋チャット"
-            max-width="120px"
+            max-width="110px"
             class="mx-auto my-5"
           />
         </div>
