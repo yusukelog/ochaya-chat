@@ -5,10 +5,6 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer :fixed="fixed" app>
-      <span>&copy; {{ new Date().getFullYear() }}</span>
-    </v-footer>
-
     <v-app-bar app class="light-green darken-1 white--text" flat>
       <h1 class="title font-weight-bold">
         <span class="m-plus">おちゃ屋チャット</span>
@@ -16,6 +12,23 @@
       <v-spacer />
       <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer" />
     </v-app-bar>
+
+    <v-navigation-drawer v-model="drawer" app clipped right>
+      <v-list dense>
+        <v-list-item @click.stop="">
+          <v-list-item-action>
+            <v-icon>mdi-plus</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>スレッドの作成</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-footer :fixed="fixed" app>
+      <span>&copy; {{ new Date().getFullYear() }}</span>
+    </v-footer>
   </v-app>
 </template>
 
@@ -23,25 +36,8 @@
 export default {
   data() {
     return {
-      clipped: false,
-      drawer: false,
       fixed: false,
-      items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
-        }
-      ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      drawer: null
     }
   }
 }
