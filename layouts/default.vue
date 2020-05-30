@@ -13,7 +13,7 @@
       <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer" />
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app clipped right>
+    <v-navigation-drawer v-model="drawer" app clipped right fixed>
       <v-list dense>
         <v-list-item @click.stop="">
           <v-list-item-action>
