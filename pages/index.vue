@@ -31,6 +31,7 @@
 
 <script>
 export default {
+  middleware: ['checkLogin'],
   data() {
     return {
       image_src: require('~/assets/images/illustrain10-nomimono10.png')

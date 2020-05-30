@@ -5,15 +5,21 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-app-bar app class="light-green darken-1 white--text" flat>
-      <h1 class="title font-weight-bold">
-        <span class="m-plus">おちゃ屋チャット</span>
-      </h1>
+    <v-app-bar app flat class="light-green darken-1 white--text">
+      <v-btn icon color="white" active-class="no-active" to="/top">
+        <v-icon>mdi-format-list-bulleted-square</v-icon>
+      </v-btn>
       <v-spacer />
-      <v-app-bar-nav-icon color="white" @click.stop="drawer = !drawer" />
+      <v-toolbar-title>
+        <span class="subtitle-2 font-weight-bold m-plus">おちゃ屋チャット</span>
+      </v-toolbar-title>
+      <v-spacer />
+      <v-btn icon color="white" @click.stop="drawer = !drawer">
+        <v-icon>mdi-cog</v-icon>
+      </v-btn>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" app clipped right fixed>
+    <v-navigation-drawer v-model="drawer" app right>
       <v-list dense>
         <v-list-item @click.stop="">
           <v-list-item-action>
@@ -37,8 +43,14 @@ export default {
   data() {
     return {
       fixed: false,
-      drawer: null
+      drawer: false
     }
   }
 }
 </script>
+
+<style scoped>
+.v-btn--active.no-active::before {
+  opacity: 0 !important;
+}
+</style>
