@@ -1,5 +1,13 @@
 <template>
-  <v-row>
-    <v-col cols="12">top</v-col>
-  </v-row>
+  <navigationLink v-slot="{ user }">
+    {{ user.lastName }}
+  </navigationLink>
 </template>
+<script>
+import navigationLink from '~/components/navigationLink'
+export default {
+  components: {
+    navigationLink
+  }
+}
+</script>

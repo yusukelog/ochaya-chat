@@ -7,7 +7,10 @@
     </v-content>
     <v-app-bar app flat class="light-green darken-1 white--text">
       <v-btn icon color="white" active-class="no-active" to="/top">
-        <v-icon>mdi-format-list-bulleted-square</v-icon>
+        <div class="text-center">
+          <v-icon>mdi-format-list-bulleted-square</v-icon>
+          <h5>スレ一覧</h5>
+        </div>
       </v-btn>
       <v-spacer />
       <v-toolbar-title>
@@ -15,13 +18,16 @@
       </v-toolbar-title>
       <v-spacer />
       <v-btn icon color="white" @click.stop="drawer = !drawer">
-        <v-icon>mdi-cog</v-icon>
+        <div class="text-center">
+          <v-icon>mdi-cog</v-icon>
+          <h5>設定</h5>
+        </div>
       </v-btn>
     </v-app-bar>
 
     <v-navigation-drawer v-model="drawer" app right>
       <v-list dense>
-        <v-list-item @click.stop="">
+        <v-list-item @click.stop="openModal">
           <v-list-item-action>
             <v-icon>mdi-plus</v-icon>
           </v-list-item-action>
@@ -35,15 +41,39 @@
     <v-footer :fixed="fixed" app>
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
+
+    <v-dialog v-model="dialog" max-width="290">
+      <CreateThreadModal></CreateThreadModal>
+    </v-dialog>
   </v-app>
 </template>
 
 <script>
+import CreateThreadModal from '~/components/CreateThreadModal'
+
 export default {
+  components: {
+    CreateThreadModal
+  },
+
   data() {
     return {
+      // footer固定しない
       fixed: false,
-      drawer: false
+      // ドロワー
+      drawer: false,
+      dialog: false
+    }
+  },
+
+  methods: {
+    openModal() {
+      this.dialog = true
+      // ドロワーを閉じる
+      this.drawer = false
+    },
+    closeModal() {
+      this.isCreateMode = false
     }
   }
 }
