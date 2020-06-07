@@ -64,10 +64,9 @@ export default {
     },
 
     async onSubmit() {
-      console.log('test')
       // 認証チェック
       const user = this.$auth.currentUser
-      if (!user) this.$router.push('/login')
+      if (!user) this.$router.push('/')
 
       // 入力値チェック
       this.validateName()
@@ -80,7 +79,7 @@ export default {
       }
 
       try {
-        await this.$firestore.collection('rooms').add(params)
+        await this.$firestore.collection('threads').add(params)
         this.$emit('closeModal')
       } catch (e) {
         this.setMessage({ message: '登録に失敗しました。' })

@@ -43,7 +43,7 @@
     </v-footer>
 
     <v-dialog v-model="dialog" max-width="290">
-      <CreateThreadModal></CreateThreadModal>
+      <CreateThreadModal @closeModal="closeModal" />
     </v-dialog>
   </v-app>
 </template>
@@ -73,7 +73,7 @@ export default {
       this.drawer = false
     },
     closeModal() {
-      this.isCreateMode = false
+      this.dialog = false
     }
   }
 }
