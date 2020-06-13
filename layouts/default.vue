@@ -42,7 +42,7 @@
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
 
-    <v-dialog v-model="dialog" max-width="290">
+    <v-dialog v-model="dialog">
       <CreateThreadModal @closeModal="closeModal" />
     </v-dialog>
   </v-app>
