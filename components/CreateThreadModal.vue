@@ -78,7 +78,6 @@ export default {
       this.formHasErrors = false
       Object.keys(this.isForm).forEach((f) => {
         if (!this.form[f]) this.formHasErrors = true
-        console.log(f)
         this.$refs[f].validate(true)
       })
 
