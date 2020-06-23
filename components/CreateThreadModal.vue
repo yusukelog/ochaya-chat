@@ -1,5 +1,5 @@
 <template>
-  <v-card ref="form">
+  <v-card>
     <v-card-title>スレッドの作成</v-card-title>
     <v-card-text>
       <v-text-field

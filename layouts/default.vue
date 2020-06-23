@@ -14,7 +14,7 @@
       </v-btn>
       <v-spacer />
       <v-toolbar-title>
-        <span class="subtitle-2 font-weight-bold m-plus">おちゃ屋チャット</span>
+        <span class="subtitle-2 font-weight-bold m-plus">おちゃ屋トーク</span>
       </v-toolbar-title>
       <v-spacer />
       <v-btn icon color="white" @click.stop="drawer = !drawer">
