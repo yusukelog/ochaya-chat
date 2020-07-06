@@ -20,7 +20,7 @@
         color="amber darken-2 font-weight-bold"
         large
         dark
-        @click="doLgoin"
+        @click="doLogin"
       >
         Googleでログインする
       </v-btn>
@@ -38,7 +38,7 @@ export default {
   },
   methods: {
     // ログイン処理
-    doLgoin() {
+    doLogin() {
       const provider = new this.$firebase.auth.GoogleAuthProvider()
       this.$fireAuth.signInWithRedirect(provider)
     }
